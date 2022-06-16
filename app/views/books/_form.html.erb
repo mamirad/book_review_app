@@ -1,0 +1,8 @@
+<%= form_for @book do |f| %>
+    <%= render "error_messages", :target => @book %>
+    <%= f.label :name, class: "mr-sm-2" %>  <br>
+    <%= f.text_field :name, class: "mr-sm-2" %> <br>
+    <%= f.label :author, class: "mr-sm-2" %>  <br>
+    <%= f.text_field :author, class: "mr-sm-2" %> 
+    <%= f.submit  %>
+<% end %>

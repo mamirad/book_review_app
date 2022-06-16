@@ -1,0 +1,14 @@
+<% if flash[:notice] %>
+      <div id="alert">
+         <%= flash[:notice] %> 
+      </div>
+<% end %>
+<div class="container">
+<h2>Review:</h2>
+<h6><b> Review Title: </b> <%= @review.title %></h6>
+<p><b> Review Description: </b><br> <%= @review.description %></p>
+<p><b> Review Rate:  </b> <%= @review.rate %></p>
+</div>
+
+
+

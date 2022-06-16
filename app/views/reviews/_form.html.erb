@@ -1,0 +1,14 @@
+<%# <%= binding.pry %>
+<%= form_with(model: [@book, @review], local: true) do |form| %>
+  <%= render "error_messages", :target => @review %>
+  <%= form.label :title %>  <br>
+  <%= form.text_field :title %>  <br>
+  <%= form.label :description %>  <br>
+  <%= form.text_area :description %>  <br>
+  <%= form.label :rate %>  <br>
+  <%= form.text_field :rate %>  <br>
+  
+  <br>
+  <br>
+  <%= form.submit %>
+<% end %>
