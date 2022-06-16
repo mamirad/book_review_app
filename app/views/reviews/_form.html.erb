@@ -1,14 +1,19 @@
 <%# <%= binding.pry %>
-<%= form_with(model: [@book, @review], local: true) do |form| %>
-  <%= render "error_messages", :target => @review %>
-  <%= form.label :title %>  <br>
-  <%= form.text_field :title %>  <br>
-  <%= form.label :description %>  <br>
-  <%= form.text_area :description %>  <br>
-  <%= form.label :rate %>  <br>
-  <%= form.text_field :rate %>  <br>
-  
-  <br>
-  <br>
-  <%= form.submit %>
+<section class="container formlog">
+  <%= form_with(model: [@book, @review]) do |form| %>
+    
+    <%= render "error_messages", :target => @review %>
+    <div class="form-outline mb-4">
+      <%= form.label :title, class: "form-label text-center" %>  <br>
+      <%= form.text_field :title , class: "form-control"%>  <br>
+      <%= form.label :rate, class: "form-label text-center" %>  <br>
+      <%= form.text_field :rate, class: "form-control col-sm-2" %>  <br>
+    </div>
+    <div class="form-outline mb-4">
+      <%= form.label :description, class: "form-label text-center" %>  <br>
+      <%= form.text_area :description, class: "form-control" %>  <br>
+    </div>
+    <br>
+    <%= form.submit %>
 <% end %>
+</section>
