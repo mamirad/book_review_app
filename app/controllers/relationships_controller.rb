@@ -1,9 +1,6 @@
 class RelationshipsController < ApplicationController
 
-  before_action :user_signed_in?
-
   def create
-    # binding.pry
     user = User.find(params[:followed_id])
     current_user.follow(user)
     redirect_to root_path

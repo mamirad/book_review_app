@@ -8,6 +8,7 @@ class BooksController < ApplicationController
   
   def new
     @book = Book.new
+    authorize @book
   end
   
   def create
@@ -19,13 +20,9 @@ class BooksController < ApplicationController
     end
   end
 
-  def show
-   
-  end
+  def show;end
   
-  def edit
-
-  end
+  def edit;end
 
   def update
     if @book.update(book_params)

@@ -4,7 +4,9 @@ class BookPolicy < ApplicationPolicy
     user.present?
   end
 
- 
+  def new?
+    user.present?
+  end
   def update?
     user.present?
   end
