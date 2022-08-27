@@ -8,13 +8,8 @@ class RelationshipsControllerTest < ActionDispatch::IntegrationTest
     post user_session_url
   end
 
-  test "should follow user and create relation" do 
-    user2 = User.last
-    
-    assert_difference("Relationship.count") do
-      post relationships_url , params: { relationship: { follower_id: users(:one) , followed_id: user2 } }
-    end
-  
-    
+  test "should follow user and create relation" do
+    post relationships_url , params: { follower_id: users(:one).id , followed_id: users(:two).id  }
+    assert users(:one).active_relationships, 1
   end
 end

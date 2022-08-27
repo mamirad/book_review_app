@@ -36,12 +36,14 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    authorize @review
     if @review.update(review_params)
       flash[:notice] = "Updated Successfully"
       redirect_to book_review_path(@book)
     else
       render 'edit'
     end
+
   end
 
   def destroy
@@ -53,16 +55,12 @@ class ReviewsController < ApplicationController
   private
   def find_review
     @review = Review.find(params[:id])
-    authorize @review
   end
 
   def get_book
     @book = Book.find(params[:book_id])
   end
-  # def get_user
-  #   # binding.pry
-  #   @user = User.find(params[:user_id])
-  # end
+
 
   def review_params
     params.require(:review).permit(:title, :description, :rate, :book_id)

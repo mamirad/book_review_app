@@ -9,7 +9,6 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def edit?
-    # binding.pry
     user.id == record.user_id
   end
 

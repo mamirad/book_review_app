@@ -1,14 +1,24 @@
-<% if flash[:notice] %>
-      <div id="alert">
-         <%= flash[:notice] %> 
-      </div>
+<% content_for :custom_links do %>
+  <li>
+    <%= link_to "All Reviews", book_reviews_path(@book) %>
+  </li>
 <% end %>
-<div class="container">
-<h2>Review:</h2>
-<h6><b> Review Title: </b> <%= @review.title %></h6>
-<p><b> Review Description: </b><br> <%= @review.description %></p>
-<p><b> Review Rate:  </b> <%= @review.rate %></p>
-</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Review Title</th>
+      <td><%= @review.title %></td>
+    </tr>
+  <tr>
+    <th>Description</th>
+    <td> <%= @review.description %></td>
+  </tr>
+  <tr>
+    <th>Rating</th>
+    <td><%= @review.rate %></td>
+  </tr>
+  </thead>
+</table>
 
 
 

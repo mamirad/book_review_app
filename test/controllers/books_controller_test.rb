@@ -30,7 +30,6 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should edit Book" do
-    # binding.pry
     get edit_book_path(Book.last.id)
     assert_response :success
   end
@@ -45,12 +44,8 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
   test "should destroy Book" do
     
     assert_difference("Book.count", -1) do
-      # @book = Book.last.id
-      # @book.reviews.clear
       delete book_url(Book.last.id)
     end
 
-    assert_redirected_to book_path
-    
   end
 end
